@@ -1,0 +1,16 @@
+{
+  "buildCommand": "cd interview_instnt && npm run build",
+  "outputDirectory": "interview_instnt/dist",
+  "installCommand": "cd interview_instnt && npm install",
+  "devCommand": "cd interview_instnt && npm run dev",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+
