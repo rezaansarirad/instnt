@@ -14,7 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Eye, EyeOff } from 'lucide-react';
-import { loginSchema, type LoginSchema } from '../schemas/auth';
+import { loginSchema, type LoginSchema } from '../../schemas/auth';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -30,7 +30,6 @@ const Login: React.FC = () => {
 
   const onSubmit = (values: LoginSchema) => {
     console.log('Login submitted', values);
-    // Handle login logic here
     navigate('/onboarding', { state: { email: values.email } });
   };
 

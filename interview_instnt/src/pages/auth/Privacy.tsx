@@ -12,20 +12,19 @@ const Privacy: React.FC = () => {
   const [policyText, setPolicyText] = useState('');
 
   const handleSave = () => {
-    // Save logic here
     console.log({ privacyOption, link, policyText });
-    navigate('/dashboard'); // Assuming dashboard or home is the next step
+    navigate('/dashboard');
   };
 
   const handleSkip = () => {
-    navigate('/dashboard'); // Or wherever the user should go after skipping
+    navigate('/dashboard');
   };
 
   return (
     <div className="min-h-screen bg-white bg-dot-pattern flex flex-col">
       <header className="border-b border-gray-200 px-4 py-4 md:px-8 md:py-6 bg-white z-50">
          <div className="max-w-5xl mx-auto">
-            <span className="text-2xl font-bold text-primary font-mono tracking-tight">instnt</span>
+            <span className="text-2xl font-bold text-primary font-mono tracking-tight">violo</span>
          </div>
       </header>
 
@@ -34,7 +33,7 @@ const Privacy: React.FC = () => {
         <div className="space-y-6">
           <h2 className="text-2xl font-semibold">Privacy</h2>
           <p className="text-gray-600">
-            Instnt is committed to assisting you in your efforts to comply with the EU General Data Processing Regulation (GDPR). According to GDPR, when processing job applications from EU citizens on your behalf, Instnt will be the 'Data Processor' and your organisation will be the 'Data Controller'.
+          violo is committed to assisting you in your efforts to comply with the EU General Data Processing Regulation (GDPR). According to GDPR, when processing job applications from EU citizens on your behalf, violo will be the 'Data Processor' and your organisation will be the 'Data Controller'.
           </p>
 
           <div className="bg-gray-50 rounded-lg p-6 md:p-8 space-y-6">

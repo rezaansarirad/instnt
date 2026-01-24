@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Eye, EyeOff } from 'lucide-react';
-import { registerSchema, type RegisterSchema } from '../schemas/auth';
+import { registerSchema, type RegisterSchema } from '../../schemas/auth';
 import { PasswordRequirements } from '@/components/ui/PasswordRequirements';
 
 const Register: React.FC = () => {
@@ -35,13 +35,11 @@ const Register: React.FC = () => {
     mode: "onChange"
   });
 
-  // Watch fields
   const password = form.watch("password");
   const agreeToTerms = form.watch("agreeToTerms");
 
   const onSubmit = (values: RegisterSchema) => {
     console.log('Register submitted', values);
-    // Handle register logic here
     navigate('/onboarding', { 
       state: { 
         email: values.email,

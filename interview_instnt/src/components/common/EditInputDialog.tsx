@@ -33,7 +33,6 @@ export const EditInputDialog: React.FC<EditInputDialogProps> = ({
 }) => {
   const [value, setValue] = useState(initialValue);
 
-  // Update internal state when initialValue changes or dialog opens
   useEffect(() => {
     setValue(initialValue);
   }, [initialValue, open]);

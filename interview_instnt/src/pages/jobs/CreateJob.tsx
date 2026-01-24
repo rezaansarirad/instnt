@@ -46,23 +46,19 @@ const CreateJob: React.FC = () => {
   ]);
   const [newRequirement, setNewRequirement] = useState('');
   
-  // Interview Questions State
   const [questions, setQuestions] = useState<InterviewQuestion[]>([
     { id: 1, text: 'What do you know about our company?', attempts: '1', duration: '60 sec' }
   ]);
   const [isQuestionDialogOpen, setIsQuestionDialogOpen] = useState(false);
   const [editingQuestionId, setEditingQuestionId] = useState<number | null>(null);
 
-  // Video State
   const [videoFile, setVideoFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Edit Modal State
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [editingReqId, setEditingReqId] = useState<number | null>(null);
   const [editingReqTitle, setEditingReqTitle] = useState('');
 
-  // Delete Confirmation Dialog State
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [itemToDelete, setItemToDelete] = useState<{ type: 'requirement' | 'question', id: number } | null>(null);
 
@@ -73,7 +69,6 @@ const CreateJob: React.FC = () => {
     })
   );
   
-  // Step 1 Form
   const { register, watch, setValue } = useForm({
     defaultValues: {
       jobTitle: 'Sales Representative',
@@ -225,7 +220,6 @@ const CreateJob: React.FC = () => {
   };
 
   const handleCreateJob = () => {
-    // Collect all data
     const jobData = {
       ...formData,
       requirements,
@@ -234,7 +228,6 @@ const CreateJob: React.FC = () => {
     };
     console.log('Job Data:', jobData);
     
-    // Navigate to privacy page
     navigate('/privacy');
   };
 
@@ -249,15 +242,15 @@ const CreateJob: React.FC = () => {
     <div className="min-h-screen bg-white bg-dot-pattern">
      <header className="border-b border-gray-200 px-4 py-4 md:px-8 md:py-6 sticky top-0 bg-white z-50">
          <div className="max-w-5xl mx-auto">
-            <span className="text-2xl font-bold text-primary font-mono tracking-tight">instnt</span>
+            <span className="text-2xl font-bold text-primary font-mono tracking-tight">violo</span>
          </div>
       </header>
 
       <div className="max-w-3xl mx-auto px-4 py-12">
-        {/* Horizontal Stepper */}
+        
         <div className="mb-12">
            <div className="flex items-center justify-between relative">
-              {/* Progress Line */}
+              
               <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-0.5 border-t-2 border-gray-200 border-dashed -z-10" />
               <div 
                 className="absolute left-0 top-1/2 transform -translate-y-1/2 h-0.5 border-t-2 border-primary border-dashed -z-10 transition-all duration-300"
@@ -479,7 +472,7 @@ const CreateJob: React.FC = () => {
             </div>
         )}
 
-        {/* Step 4: Intro Video */}
+        
         {currentStep === 4 && (
             <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
                <h2 className="text-2xl font-semibold mb-2">Intro video</h2>
@@ -546,7 +539,7 @@ const CreateJob: React.FC = () => {
 
       </div>
 
-      {/* Edit Modal */}
+      
       <EditInputDialog
         open={isEditModalOpen}
         onOpenChange={setIsEditModalOpen}
@@ -556,7 +549,7 @@ const CreateJob: React.FC = () => {
         placeholder="Enter requirement..."
       />
 
-      {/* Question Dialog */}
+      
       <QuestionDialog
         open={isQuestionDialogOpen}
         onOpenChange={setIsQuestionDialogOpen}
@@ -566,7 +559,7 @@ const CreateJob: React.FC = () => {
         saveLabel={editingQuestionId ? "Save changes" : "Add question"}
       />
 
-      {/* Delete Confirmation Dialog */}
+      
       <ConfirmationDialog
         open={isDeleteDialogOpen}
         onOpenChange={setIsDeleteDialogOpen}

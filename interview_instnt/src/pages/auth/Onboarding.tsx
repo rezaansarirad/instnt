@@ -12,7 +12,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { profileSchema, type ProfileSchema } from '../schemas/profile';
+import { profileSchema, type ProfileSchema } from '../../schemas/profile';
 
 const Onboarding: React.FC = () => {
   const location = useLocation();
@@ -39,13 +39,11 @@ const Onboarding: React.FC = () => {
 
   const onSubmit = async (values: ProfileSchema) => {
     setIsSubmitting(true);
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     console.log('Onboarding submitted', values);
     setIsSubmitting(false);
     setIsSuccess(true);
 
-    // Auto redirect after success message
     setTimeout(() => {
         navigate('/create-job');
     }, 1500);
@@ -72,20 +70,18 @@ const Onboarding: React.FC = () => {
       
       <header className="border-b border-gray-200 px-4 py-4 md:px-8 md:py-6">
          <div className="max-w-5xl mx-auto">
-            <span className="text-2xl font-bold text-primary font-mono tracking-tight">instnt</span>
+            <span className="text-2xl font-bold text-primary font-mono tracking-tight">violo</span>
          </div>
       </header>
 
       <main className="max-w-3xl mx-auto px-4 py-6 md:px-8 md:py-10">
         <div className="mb-8 md:mb-12">
-          <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2 md:mb-3">Welcome to Instnt</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2 md:mb-3">Welcome to violo</h1>
           <p className="text-gray-500 text-base md:text-lg">Complete your profile to get started.</p>
         </div>
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            
-            {/* First Name */}
             <FormField
               control={form.control}
               name="firstName"
@@ -102,7 +98,6 @@ const Onboarding: React.FC = () => {
               )}
             />
 
-            {/* Last Name */}
             <FormField
               control={form.control}
               name="lastName"
@@ -119,7 +114,6 @@ const Onboarding: React.FC = () => {
               )}
             />
 
-            {/* Email */}
             <FormField
               control={form.control}
               name="email"
@@ -136,7 +130,6 @@ const Onboarding: React.FC = () => {
               )}
             />
 
-            {/* Company */}
             <FormField
               control={form.control}
               name="company"
@@ -153,7 +146,6 @@ const Onboarding: React.FC = () => {
               )}
             />
 
-            {/* Phone Number */}
             <FormField
               control={form.control}
               name="phoneNumber"
@@ -170,7 +162,6 @@ const Onboarding: React.FC = () => {
               )}
             />
 
-            {/* Language */}
             <FormField
               control={form.control}
               name="language"
@@ -188,7 +179,6 @@ const Onboarding: React.FC = () => {
                          <option value="French">French</option>
                       </select>
                     </FormControl>
-                    {/* Custom Chevron */}
                     <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                          <path d="M1 1L5 5L9 1" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -200,7 +190,6 @@ const Onboarding: React.FC = () => {
               )}
             />
 
-            {/* Button */}
             <div className="mt-8 flex justify-center">
                <Button type="submit" disabled={isSubmitting} className="w-full md:w-[200px] h-12 text-base font-medium rounded-md">
                  {isSubmitting ? "Saving..." : "Save and continue"}
