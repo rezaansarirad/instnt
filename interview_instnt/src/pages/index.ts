@@ -1,21 +1,23 @@
 // Auth
-export * from './auth';
+export * from "./auth";
 
 // Dashboard
-export * from './dashboard';
+export * from "./dashboard";
 
 // Jobs
-export * from './jobs';
+export * from "./jobs";
 
 // Candidates
-export * from './candidates';
+export * from "./candidates";
 
 // Interviews
-export * from './interviews';
+export * from "./interviews";
 
 // Reports
-export * from './reports';
+export * from "./reports";
 
 // Settings
-export * from './settings';
+export * from "./settings";
 
+// Apply
+export * from "./apply";

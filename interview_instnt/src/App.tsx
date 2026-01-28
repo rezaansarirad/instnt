@@ -31,6 +31,14 @@ import {
   // Settings & Help
   Settings,
   Help,
+  // Apply
+  ApplyStart,
+  ApplyDetails,
+  ApplyRequirements,
+  ApplyVideo,
+  ApplyCv,
+  ApplyReview,
+  ApplyMobileApp,
 } from "./pages";
 
 function App() {
@@ -42,6 +50,15 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/privacy" element={<Privacy />} />
+
+        {/* Apply Routes (Public) */}
+        <Route path="/apply" element={<ApplyStart />} />
+        <Route path="/apply/mobile" element={<ApplyMobileApp />} />
+        <Route path="/apply/details" element={<ApplyDetails />} />
+        <Route path="/apply/requirements" element={<ApplyRequirements />} />
+        <Route path="/apply/video" element={<ApplyVideo />} />
+        <Route path="/apply/cv" element={<ApplyCv />} />
+        <Route path="/apply/review" element={<ApplyReview />} />
 
         {/* Protected Routes with MainLayout */}
         <Route
