@@ -1,5 +1,11 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { MainLayout } from './layouts/MainLayout';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { MainLayout } from "./layouts/MainLayout";
+import { Toaster } from "./components/ui/toaster";
 import {
   // Auth
   Login,
@@ -25,7 +31,7 @@ import {
   // Settings & Help
   Settings,
   Help,
-} from './pages';
+} from "./pages";
 
 function App() {
   return (
@@ -38,36 +44,149 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
 
         {/* Protected Routes with MainLayout */}
-        <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
-        
+        <Route
+          path="/dashboard"
+          element={
+            <MainLayout>
+              <Dashboard />
+            </MainLayout>
+          }
+        />
+
         {/* Jobs */}
-        <Route path="/create-job" element={<MainLayout><CreateJob /></MainLayout>} />
-        <Route path="/jobs/:id" element={<MainLayout><JobDetail /></MainLayout>} />
-        
+        <Route
+          path="/create-job"
+          element={
+            <MainLayout>
+              <CreateJob />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/jobs/:id"
+          element={
+            <MainLayout>
+              <JobDetail />
+            </MainLayout>
+          }
+        />
+
         {/* Candidates */}
-        <Route path="/candidates" element={<MainLayout><Candidates /></MainLayout>} />
-        <Route path="/candidates/profile" element={<MainLayout><CandidateProfile /></MainLayout>} />
-        <Route path="/candidates/:id" element={<MainLayout><CandidateProfile /></MainLayout>} />
-        
+        <Route
+          path="/candidates"
+          element={
+            <MainLayout>
+              <Candidates />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/candidates/profile"
+          element={
+            <MainLayout>
+              <CandidateProfile />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/candidates/:id"
+          element={
+            <MainLayout>
+              <CandidateProfile />
+            </MainLayout>
+          }
+        />
+
         {/* Interviews */}
-        <Route path="/interviews" element={<MainLayout><Interviews /></MainLayout>} />
-        <Route path="/interviews/schedule" element={<MainLayout><ScheduleInterview /></MainLayout>} />
-        <Route path="/interviews/:id" element={<MainLayout><InterviewDetail /></MainLayout>} />
-        
+        <Route
+          path="/interviews"
+          element={
+            <MainLayout>
+              <Interviews />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/interviews/schedule"
+          element={
+            <MainLayout>
+              <ScheduleInterview />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/interviews/:id"
+          element={
+            <MainLayout>
+              <InterviewDetail />
+            </MainLayout>
+          }
+        />
+
         {/* Reports */}
-        <Route path="/reports" element={<MainLayout><Reports /></MainLayout>} />
-        <Route path="/reports/interview-performance" element={<MainLayout><InterviewPerformanceReport /></MainLayout>} />
-        <Route path="/reports/candidate-success" element={<MainLayout><CandidateSuccessReport /></MainLayout>} />
-        
+        <Route
+          path="/reports"
+          element={
+            <MainLayout>
+              <Reports />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/reports/interview-performance"
+          element={
+            <MainLayout>
+              <InterviewPerformanceReport />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/reports/candidate-success"
+          element={
+            <MainLayout>
+              <CandidateSuccessReport />
+            </MainLayout>
+          }
+        />
+
         {/* Settings & Help */}
-        <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} />
-        <Route path="/help" element={<MainLayout><Help /></MainLayout>} />
-        <Route path="/help/faq" element={<MainLayout><Help /></MainLayout>} />
-        <Route path="/help/guides" element={<MainLayout><Help /></MainLayout>} />
+        <Route
+          path="/settings"
+          element={
+            <MainLayout>
+              <Settings />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/help"
+          element={
+            <MainLayout>
+              <Help />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/help/faq"
+          element={
+            <MainLayout>
+              <Help />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/help/guides"
+          element={
+            <MainLayout>
+              <Help />
+            </MainLayout>
+          }
+        />
 
         {/* Default Route */}
         <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
+      <Toaster />
     </Router>
   );
 }
