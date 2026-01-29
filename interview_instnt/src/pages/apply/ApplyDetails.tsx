@@ -527,7 +527,6 @@ export function ApplyDetails() {
                               />
                             </div>
                             <p className="text-xs sm:text-sm font-medium text-gray-700 mb-1">
-                              md{" "}
                               {dragActive.drivingLicense
                                 ? "Drop your file here"
                                 : "Click to upload or drag and drop"}
