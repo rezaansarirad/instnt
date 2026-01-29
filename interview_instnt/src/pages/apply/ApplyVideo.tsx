@@ -180,7 +180,7 @@ export function ApplyVideo() {
 
   if (showPermissionDialog && cameraPermission === null) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="bg-white p-6 rounded-lg shadow-lg max-w-md">
           <h2 className="text-lg font-semibold mb-4">
             interview.violo.com says
