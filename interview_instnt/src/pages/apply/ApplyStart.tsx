@@ -17,27 +17,24 @@ export function ApplyStart() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6 bg-background">
+    <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 bg-background">
       <div className="max-w-2xl w-full">
-        {/* Logo */}
-        <div className="text-center mb-10">
-          <span className="text-3xl font-light text-gray-900">instnt</span>
+        <div className="text-center mb-6 sm:mb-10">
+          <span className="text-2xl sm:text-3xl font-light text-gray-900">
+            Violo
+          </span>
         </div>
 
-        {/* Main Card */}
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-          {/* Content Section */}
-          <div className="px-8 py-10">
-            {/* Title */}
-            <h1 className="text-2xl font-semibold text-gray-900 text-center mb-2">
+          <div className="px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10">
+            <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 text-center mb-4 sm:mb-2">
               Apply for {jobData.title}
             </h1>
 
-            {/* Job Details */}
-            <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">
               <div className="flex items-center gap-2">
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -48,11 +45,11 @@ export function ApplyStart() {
                   />
                   <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
                 </svg>
-                <span>{jobData.company}</span>
+                <span className="whitespace-nowrap">{jobData.company}</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -62,11 +59,11 @@ export function ApplyStart() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>{jobData.location}</span>
+                <span className="whitespace-nowrap">{jobData.location}</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -77,15 +74,14 @@ export function ApplyStart() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>{jobData.salary}</span>
+                <span className="whitespace-nowrap">{jobData.salary}</span>
               </div>
             </div>
 
-            {/* Info Box */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg px-5 py-4 mb-8">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 sm:px-5 py-3 sm:py-4 mb-6 sm:mb-8">
               <div className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-blue-600 shrink-0 mt-0.5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -95,7 +91,7 @@ export function ApplyStart() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="text-sm text-gray-700 leading-relaxed">
                     Record your video interview directly through your smartphone
                     or desktop browser.
@@ -108,18 +104,16 @@ export function ApplyStart() {
               </div>
             </div>
 
-            {/* Application Options */}
-            <h2 className="text-lg font-semibold text-gray-900 mb-6 text-center">
+            <h2 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-6 text-center">
               Choose Your Application Method
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-5 mb-8">
-              {/* Mobile App Option */}
-              <div className="group bg-white border-2 border-gray-200 rounded-lg p-6 text-center hover:border-gray-300 hover:shadow-md transition-all duration-200 cursor-pointer">
-                <div className="mb-4 flex justify-center">
-                  <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-6 sm:mb-8">
+              <div className="relative group bg-white border-2 border-gray-200 rounded-lg p-5 sm:p-6 text-center cursor-not-allowed opacity-60">
+                <div className="mb-3 sm:mb-4 flex justify-center">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-100 rounded-lg flex items-center justify-center">
                     <svg
-                      className="w-7 h-7 text-gray-600"
+                      className="w-6 h-6 sm:w-7 sm:h-7 text-gray-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -140,13 +134,13 @@ export function ApplyStart() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="font-semibold text-base text-gray-900 mb-2">
+                <h3 className="font-semibold text-sm sm:text-base text-gray-900 mb-2">
                   Apply with mobile app
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                  Get the Instnt Video Interviews app for Android or iOS
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3">
+                  Get the violo Video Interviews app for Android or iOS
                 </p>
-                <div className="flex gap-2 justify-center">
+                <div className="flex gap-2 justify-center flex-wrap">
                   <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded">
                     iOS
                   </span>
@@ -154,17 +148,19 @@ export function ApplyStart() {
                     Android
                   </span>
                 </div>
+                <div className="absolute top-2 sm:top-3 right-2 sm:right-3 px-2 py-1 bg-gray-800 text-white text-xs font-medium rounded">
+                  Coming soon
+                </div>
               </div>
 
-              {/* Browser Option */}
               <div
                 onClick={handleContinueInBrowser}
-                className="group bg-white border-3 border-orange-400 rounded-lg p-6 text-center hover:border-orange-500 hover:shadow-lg transition-all duration-200 cursor-pointer"
+                className="group bg-white border-3 border-orange-400 rounded-lg p-5 sm:p-6 text-center hover:border-orange-500 hover:shadow-lg transition-all duration-200 cursor-pointer"
               >
-                <div className="mb-4 flex justify-center">
-                  <div className="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                <div className="mb-3 sm:mb-4 flex justify-center">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
                     <svg
-                      className="w-7 h-7 text-orange-600"
+                      className="w-6 h-6 sm:w-7 sm:h-7 text-orange-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -178,13 +174,13 @@ export function ApplyStart() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="font-semibold text-base text-gray-900 mb-2">
+                <h3 className="font-semibold text-sm sm:text-base text-gray-900 mb-2">
                   Continue in browser
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3">
                   Optimised for Chrome and Firefox
                 </p>
-                <div className="flex gap-2 justify-center">
+                <div className="flex gap-2 justify-center flex-wrap">
                   <span className="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded">
                     Chrome
                   </span>
@@ -195,19 +191,18 @@ export function ApplyStart() {
               </div>
             </div>
 
-            {/* Terms */}
-            <p className="text-xs text-center text-gray-500 leading-relaxed">
-              By continuing you accept the{" "}
+            <p className="text-xs text-center text-gray-500 leading-relaxed px-2">
+              By continuing you accept the
               <a
                 href="#"
-                className="text-orange-600 hover:text-orange-700 underline"
+                className="text-orange-600 hover:text-orange-700 underline mx-1"
               >
-                Instnt Terms
-              </a>{" "}
-              and{" "}
+                violo Terms
+              </a>
+              and
               <a
                 href="#"
-                className="text-orange-600 hover:text-orange-700 underline"
+                className="text-orange-600 hover:text-orange-700 underline mx-1"
               >
                 Privacy Policy
               </a>
@@ -215,8 +210,7 @@ export function ApplyStart() {
           </div>
         </div>
 
-        {/* Need Help */}
-        <div className="mt-8 text-center">
+        <div className="mt-6 sm:mt-8 text-center">
           <a
             href="#"
             className="text-sm text-gray-500 hover:text-gray-700 transition-colors"

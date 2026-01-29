@@ -34,11 +34,10 @@ import {
   // Apply
   ApplyStart,
   ApplyDetails,
-  ApplyRequirements,
   ApplyVideo,
-  ApplyCv,
   ApplyReview,
-  ApplyMobileApp,
+  // NotFound
+  NotFound,
 } from "./pages";
 
 function App() {
@@ -53,11 +52,9 @@ function App() {
 
         {/* Apply Routes (Public) */}
         <Route path="/apply" element={<ApplyStart />} />
-        <Route path="/apply/mobile" element={<ApplyMobileApp />} />
         <Route path="/apply/details" element={<ApplyDetails />} />
-        <Route path="/apply/requirements" element={<ApplyRequirements />} />
         <Route path="/apply/video" element={<ApplyVideo />} />
-        <Route path="/apply/cv" element={<ApplyCv />} />
+
         <Route path="/apply/review" element={<ApplyReview />} />
 
         {/* Protected Routes with MainLayout */}
@@ -202,6 +199,9 @@ function App() {
 
         {/* Default Route */}
         <Route path="/" element={<Navigate to="/login" replace />} />
+
+        {/* 404 Not Found - Catch all */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
     </Router>

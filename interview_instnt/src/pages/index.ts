@@ -21,3 +21,6 @@ export * from "./settings";
 
 // Apply
 export * from "./apply";
+
+// NotFound
+export * from "./NotFound";
