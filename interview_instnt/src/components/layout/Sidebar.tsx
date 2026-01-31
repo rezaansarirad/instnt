@@ -1,101 +1,106 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { 
-  Users, 
-  Calendar, 
-  Briefcase, 
-  BarChart3, 
-  Settings, 
+import React from "react";
+import { NavLink } from "react-router-dom";
+import {
+  Users,
+  Calendar,
+  Briefcase,
+  BarChart3,
+  Settings,
   HelpCircle,
   ChevronDown,
-  X
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
+  X,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface SidebarProps {
   isOpen?: boolean;
   onClose?: () => void;
 }
 
+import logo from "@/assets/icons/violo_logo.png";
+
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
   const [expandedSections, setExpandedSections] = React.useState<string[]>([
-    'candidates',
-    'interviews',
-    'jobs'
+    "candidates",
+    "interviews",
+    "jobs",
   ]);
 
   const toggleSection = (section: string) => {
-    setExpandedSections(prev =>
+    setExpandedSections((prev) =>
       prev.includes(section)
-        ? prev.filter(s => s !== section)
-        : [...prev, section]
+        ? prev.filter((s) => s !== section)
+        : [...prev, section],
     );
   };
 
   const navItems = [
     {
-      id: 'candidates',
-      label: 'Candidates',
+      id: "candidates",
+      label: "Candidates",
       icon: Users,
-      path: '/candidates',
+      path: "/candidates",
       subItems: [
-        { label: 'All Candidates', path: '/candidates' },
-        { label: 'Candidate Profile', path: '/candidates/profile' },
-      ]
+        { label: "All Candidates", path: "/candidates" },
+        { label: "Candidate Profile", path: "/candidates/profile" },
+      ],
     },
     {
-      id: 'interviews',
-      label: 'Interviews',
+      id: "interviews",
+      label: "Interviews",
       icon: Calendar,
-      path: '/interviews',
+      path: "/interviews",
       subItems: [
-        { label: 'All Interviews', path: '/interviews' },
-        { label: 'Schedule Interview', path: '/interviews/schedule' },
-      ]
+        { label: "All Interviews", path: "/interviews" },
+        { label: "Schedule Interview", path: "/interviews/schedule" },
+      ],
     },
     {
-      id: 'jobs',
-      label: 'Jobs',
+      id: "jobs",
+      label: "Jobs",
       icon: Briefcase,
-      path: '/dashboard',
+      path: "/dashboard",
       subItems: [
-        { label: 'All Jobs', path: '/dashboard' },
-        { label: 'Create Job', path: '/create-job' },
-      ]
+        { label: "All Jobs", path: "/dashboard" },
+        { label: "Create Job", path: "/create-job" },
+      ],
     },
     {
-      id: 'reports',
-      label: 'Reports',
+      id: "reports",
+      label: "Reports",
       icon: BarChart3,
-      path: '/reports',
+      path: "/reports",
       subItems: [
-        { label: 'Interview Performance', path: '/reports/interview-performance' },
-        { label: 'Candidate Success', path: '/reports/candidate-success' },
-      ]
+        {
+          label: "Interview Performance",
+          path: "/reports/interview-performance",
+        },
+        { label: "Candidate Success", path: "/reports/candidate-success" },
+      ],
     },
     {
-      id: 'settings',
-      label: 'Settings',
+      id: "settings",
+      label: "Settings",
       icon: Settings,
-      path: '/settings',
-      subItems: []
+      path: "/settings",
+      subItems: [],
     },
     {
-      id: 'help',
-      label: 'Help',
+      id: "help",
+      label: "Help",
       icon: HelpCircle,
-      path: '/help',
+      path: "/help",
       subItems: [
-        { label: 'FAQ', path: '/help/faq' },
-        { label: 'Guides & Support', path: '/help/guides' },
-      ]
+        { label: "FAQ", path: "/help/faq" },
+        { label: "Guides & Support", path: "/help/guides" },
+      ],
     },
   ];
 
   return (
     <>
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
           onClick={onClose}
         />
@@ -105,13 +110,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
         className={`
           fixed top-0 left-0 h-full w-64 bg-white border-r border-border z-50
           transform transition-transform duration-300 ease-in-out
-          ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0 md:static
         `}
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-6 border-b border-border">
-            <span className="text-2xl font-bold text-primary font-mono tracking-tight">violo</span>
+            <img src={logo} alt="Violo" className="h-8" />
             <Button
               variant="ghost"
               size="icon"
@@ -138,7 +143,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
                         </div>
                         <ChevronDown
                           className={`h-4 w-4 transition-transform ${
-                            expandedSections.includes(item.id) ? 'rotate-180' : ''
+                            expandedSections.includes(item.id)
+                              ? "rotate-180"
+                              : ""
                           }`}
                         />
                       </button>
@@ -151,8 +158,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
                                 className={({ isActive }) =>
                                   `block px-3 py-2 rounded-lg text-sm transition-colors ${
                                     isActive
-                                      ? 'bg-primary text-primary-foreground'
-                                      : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
+                                      ? "bg-primary text-primary-foreground"
+                                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                                   }`
                                 }
                                 onClick={onClose}
@@ -170,8 +177,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
                       className={({ isActive }) =>
                         `flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
                           isActive
-                            ? 'bg-primary text-primary-foreground'
-                            : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
+                            ? "bg-primary text-primary-foreground"
+                            : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                         }`
                       }
                       onClick={onClose}
@@ -191,8 +198,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
                 D
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-foreground truncate">Developer</p>
-                <p className="text-xs text-muted-foreground truncate">dev@violo.com</p>
+                <p className="text-sm font-medium text-foreground truncate">
+                  Developer
+                </p>
+                <p className="text-xs text-muted-foreground truncate">
+                  dev@violo.com
+                </p>
               </div>
             </div>
           </div>
@@ -201,4 +212,3 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
     </>
   );
 };
-

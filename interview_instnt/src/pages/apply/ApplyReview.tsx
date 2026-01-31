@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Button } from "../../components/ui/button";
 import { CheckCircle2, Edit3, ChevronLeft } from "lucide-react";
 
+import logo from "@/assets/icons/violo_logo.png";
+
 export function ApplyReview() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -65,9 +67,7 @@ export function ApplyReview() {
     <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 bg-background">
       <div className="max-w-3xl w-full">
         <div className="text-center mb-6 sm:mb-10">
-          <span className="text-2xl sm:text-3xl font-light text-gray-900">
-            Violo
-          </span>
+          <img src={logo} alt="Violo" className="h-8 mx-auto" />
         </div>
 
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">

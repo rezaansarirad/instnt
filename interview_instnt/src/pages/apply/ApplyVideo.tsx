@@ -1,6 +1,7 @@
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "../../components/ui/button";
+import logoWhite from "@/assets/icons/violo_logo_white.png";
 
 export function ApplyVideo() {
   const [searchParams] = useSearchParams();
@@ -233,7 +234,7 @@ export function ApplyVideo() {
       {/* Header */}
       <div className="bg-gray-800 border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="text-xl font-light text-white">violo</div>
+          <img src={logoWhite} alt="Violo" className="h-8" />
           <div className="text-white text-sm">
             Question {currentQuestion} - {questions[currentQuestion - 1]?.time}{" "}
             sec. max - Task {questions[currentQuestion - 1]?.task}

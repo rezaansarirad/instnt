@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { Sidebar } from '@/components/layout/Sidebar';
-import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
+import React, { useState } from "react";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import logo from "@/assets/icons/violo_logo.png";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -23,15 +24,12 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
           >
             <Menu className="h-6 w-6" />
           </Button>
-          <span className="text-xl font-bold text-primary font-mono tracking-tight">violo</span>
+          <img src={logo} alt="Violo" className="h-6" />
           <div className="w-10" />
         </header>
 
-        <main className="flex-1 overflow-y-auto">
-          {children}
-        </main>
+        <main className="flex-1 overflow-y-auto">{children}</main>
       </div>
     </div>
   );
 };
-

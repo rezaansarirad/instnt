@@ -18,6 +18,7 @@ import {
   Mic,
   AlertCircle,
 } from "lucide-react";
+import logo from "@/assets/icons/violo_logo.png";
 
 export function ApplyDetails() {
   const [searchParams] = useSearchParams();
@@ -156,9 +157,7 @@ export function ApplyDetails() {
       <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
           <div className="flex justify-between items-center">
-            <div className="text-xl sm:text-2xl font-light tracking-tight text-gray-900">
-              violo
-            </div>
+            <img src={logo} alt="Violo" className="h-8" />
             <div className="text-xs sm:text-sm text-gray-500">
               Step {currentStep} of 3
             </div>

@@ -1,84 +1,93 @@
 export const colors = {
   primary: {
-    DEFAULT: '#243A5E',
-    hover: '#1F2A44',
-    light: '#2B3F6C',
-    foreground: '#FFFFFF',
+    DEFAULT: "#FF671A",
+    hover: "#E64D00",
+    light: "#FF894D",
+    foreground: "#FFFFFF",
   },
 
   secondary: {
-    DEFAULT: '#2EC4B6',
-    hover: '#1FB6AA',
-    light: '#4FD1C5',
-    foreground: '#FFFFFF',
+    DEFAULT: "#2EC4B6",
+    hover: "#1FB6AA",
+    light: "#4FD1C5",
+    foreground: "#FFFFFF",
   },
 
   accent: {
-    DEFAULT: '#F4B740',
-    hover: '#E5A830',
-    foreground: '#1F2A44',
+    DEFAULT: "#F4B740",
+    hover: "#E5A830",
+    foreground: "#1F2937",
   },
 
   success: {
-    DEFAULT: '#3AC97A',
-    foreground: '#FFFFFF',
+    DEFAULT: "#3AC97A",
+    foreground: "#FFFFFF",
   },
 
   warning: {
-    DEFAULT: '#F4B740',
-    foreground: '#1F2A44',
+    DEFAULT: "#F4B740",
+    foreground: "#1F2937",
   },
 
   destructive: {
-    DEFAULT: '#E57373',
-    foreground: '#FFFFFF',
+    DEFAULT: "#E57373",
+    foreground: "#FFFFFF",
   },
 
   info: {
-    DEFAULT: '#2EC4B6',
-    foreground: '#FFFFFF',
+    DEFAULT: "#2EC4B6",
+    foreground: "#FFFFFF",
   },
 
   background: {
-    DEFAULT: '#F7F9FC',
-    card: '#FFFFFF',
-    muted: '#F1F3F7',
+    DEFAULT: "#FFFFFF",
+    card: "#FFFFFF",
+    muted: "#F1F3F7",
   },
 
   backgroundDark: {
-    DEFAULT: '#0F172A',
-    card: '#1E293B',
-    muted: '#334155',
+    DEFAULT: "#1F2937",
+    card: "#1F2937",
+    muted: "#334155",
   },
 
   foreground: {
-    DEFAULT: '#1F2A44',
-    muted: '#64748B',
+    DEFAULT: "#1F2937",
+    muted: "#64748B",
   },
 
   border: {
-    DEFAULT: '#E2E8F0',
-    dark: '#334155',
+    DEFAULT: "#E2E8F0",
+    dark: "#334155",
   },
 
   candidate: {
-    bg: '#F9FAFB',
-    primary: '#2B3F6C',
-    accent: '#4FD1C5',
+    bg: "#F9FAFB",
+    primary: "#FF671A",
+    accent: "#4FD1C5",
   },
 
   recruiter: {
-    bg: '#FFFFFF',
-    primary: '#243A5E',
-    accent: '#2EC4B6',
+    bg: "#FFFFFF",
+    primary: "#FF671A",
+    accent: "#2EC4B6",
   },
 
   charts: {
-    1: '#243A5E',
-    2: '#2EC4B6',
-    3: '#F4B740',
-    4: '#3AC97A',
-    5: '#64748B',
+    1: "#FF671A",
+    2: "#2EC4B6",
+    3: "#F4B740",
+    4: "#3AC97A",
+    5: "#64748B",
+  },
+
+  brand: {
+    100: "#FFCCB3",
+    200: "#FFAA80",
+    300: "#FF894D",
+    500: "#E64D00",
+    600: "#B33C00",
+    700: "#802B00",
   },
 } as const;
 

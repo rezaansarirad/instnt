@@ -1,5 +1,6 @@
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import logo from "@/assets/icons/violo_logo.png";
 
 export function ApplyStart() {
   const [searchParams] = useSearchParams();
@@ -20,9 +21,7 @@ export function ApplyStart() {
     <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 bg-background">
       <div className="max-w-2xl w-full">
         <div className="text-center mb-6 sm:mb-10">
-          <span className="text-2xl sm:text-3xl font-light text-gray-900">
-            Violo
-          </span>
+          <img src={logo} alt="Violo" className="h-10 mx-auto" />
         </div>
 
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
